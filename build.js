@@ -25,6 +25,7 @@ const excludePatterns = [
     'build.js',
     'package.json',
     'pnpm-lock.yaml',
+    'update-manifest.xml',
     'CHANGELOG.md',
     'README.md',
     '*.zip'

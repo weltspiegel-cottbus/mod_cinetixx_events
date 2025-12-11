@@ -17,4 +17,8 @@
         <folder>tmpl</folder>
         <folder>language</folder>
     </files>
+
+    <updateservers>
+        <server type="extension" priority="1" name="Cinetixx Events Module Updates">https://raw.githubusercontent.com/weltspiegel-cottbus/mod_cinetixx_events/main/update-manifest.xml</server>
+    </updateservers>
 </extension>

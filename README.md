@@ -18,7 +18,7 @@ This module integrates with the `com_cinetixx` component and displays current mo
 
 1. Build the package:
    ```bash
-   npm run build
+   pnpm build
    ```
 
 2. Upload the generated ZIP file via Joomla Administrator:
@@ -34,6 +34,16 @@ This module integrates with the `com_cinetixx` component and displays current mo
 ### Via GitHub Releases
 
 Download the latest release ZIP from the GitHub releases page and install via Joomla Administrator.
+
+### Automatic Updates
+
+Once installed, the module can be updated automatically through Joomla's update system:
+- System → Update → Extensions
+- Joomla checks the update server configured in the module manifest
+- New versions are automatically detected and can be installed with one click
+
+The update manifest is hosted at:
+`https://raw.githubusercontent.com/weltspiegel-cottbus/mod_cinetixx_events/main/update-manifest.xml`
 
 ## Development
 
@@ -86,6 +96,12 @@ Install dependencies first:
 ```bash
 pnpm install
 ```
+
+**Before releasing**, update the version in `update-manifest.xml`:
+1. Open `update-manifest.xml`
+2. Update the `<version>` tag to match the new version
+3. Update the download URL to match the new version tag and filename
+4. Commit these changes
 
 Then create a release:
 
