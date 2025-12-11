@@ -80,14 +80,59 @@ if (!empty($eventsOV)) $categoryCount++;
                 $detailRoute = Route::_('index.php?option=com_cinetixx&view=event&event_id=' . $id);
                 ?>
                 <div class="col-6 col-md-4 col-lg-3">
-                    <a href="<?= $detailRoute ?>" class="d-block" style="aspect-ratio: 2/3; overflow: hidden;">
-                        <?php if (!empty($event->poster)) : ?>
-                            <img src="<?= $event->poster ?>"
-                                 alt="<?= htmlspecialchars($event->title) ?>"
-                                 class="rounded"
-                                 style="width: 100%; height: 100%; object-fit: cover;">
-                        <?php endif; ?>
-                    </a>
+                    <div class="card">
+                        <a href="<?= $detailRoute ?>" class="d-block" style="aspect-ratio: 2/3; overflow: hidden;">
+                            <?php if (!empty($event->poster)) : ?>
+                                <img src="<?= $event->poster ?>"
+                                     alt="<?= htmlspecialchars($event->title) ?>"
+                                     class="card-img-top"
+                                     style="width: 100%; height: 100%; object-fit: cover;">
+                            <?php endif; ?>
+                        </a>
+                        <div class="card-body p-2">
+                            <?php
+                            // Get next show dates (group by day, take first day with up to 2 shows)
+                            if (!empty($event->shows)) {
+                                $showsByDay = [];
+                                $now = time();
+
+                                // Group shows by day
+                                foreach ($event->shows as $show) {
+                                    $showTime = strtotime($show->showStart);
+                                    if ($showTime >= $now) {
+                                        $day = date('Y-m-d', $showTime);
+                                        if (!isset($showsByDay[$day])) {
+                                            $showsByDay[$day] = [];
+                                        }
+                                        $showsByDay[$day][] = $show;
+                                    }
+                                }
+
+                                // Sort days
+                                ksort($showsByDay);
+
+                                // Get first day and limit to 2 shows
+                                if (!empty($showsByDay)) {
+                                    $nextDay = array_key_first($showsByDay);
+                                    $nextShows = array_slice($showsByDay[$nextDay], 0, 2);
+
+                                    $dayDate = new DateTime($nextDay);
+                                    echo '<div class="small text-muted">';
+                                    echo '<strong>' . $dayDate->format('D, d.m.') . '</strong><br>';
+
+                                    foreach ($nextShows as $show) {
+                                        $showDateTime = new DateTime($show->showStart);
+                                        echo $showDateTime->format('H:i');
+                                        if ($show !== end($nextShows)) {
+                                            echo ' | ';
+                                        }
+                                    }
+                                    echo '</div>';
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -101,14 +146,59 @@ if (!empty($eventsOV)) $categoryCount++;
                 $detailRoute = Route::_('index.php?option=com_cinetixx&view=event&event_id=' . $id);
                 ?>
                 <div class="col-6 col-md-4 col-lg-3">
-                    <a href="<?= $detailRoute ?>" class="d-block" style="aspect-ratio: 2/3; overflow: hidden;">
-                        <?php if (!empty($event->poster)) : ?>
-                            <img src="<?= $event->poster ?>"
-                                 alt="<?= htmlspecialchars($event->title) ?>"
-                                 class="rounded"
-                                 style="width: 100%; height: 100%; object-fit: cover;">
-                        <?php endif; ?>
-                    </a>
+                    <div class="card">
+                        <a href="<?= $detailRoute ?>" class="d-block" style="aspect-ratio: 2/3; overflow: hidden;">
+                            <?php if (!empty($event->poster)) : ?>
+                                <img src="<?= $event->poster ?>"
+                                     alt="<?= htmlspecialchars($event->title) ?>"
+                                     class="card-img-top"
+                                     style="width: 100%; height: 100%; object-fit: cover;">
+                            <?php endif; ?>
+                        </a>
+                        <div class="card-body p-2">
+                            <?php
+                            // Get next show dates (group by day, take first day with up to 2 shows)
+                            if (!empty($event->shows)) {
+                                $showsByDay = [];
+                                $now = time();
+
+                                // Group shows by day
+                                foreach ($event->shows as $show) {
+                                    $showTime = strtotime($show->showStart);
+                                    if ($showTime >= $now) {
+                                        $day = date('Y-m-d', $showTime);
+                                        if (!isset($showsByDay[$day])) {
+                                            $showsByDay[$day] = [];
+                                        }
+                                        $showsByDay[$day][] = $show;
+                                    }
+                                }
+
+                                // Sort days
+                                ksort($showsByDay);
+
+                                // Get first day and limit to 2 shows
+                                if (!empty($showsByDay)) {
+                                    $nextDay = array_key_first($showsByDay);
+                                    $nextShows = array_slice($showsByDay[$nextDay], 0, 2);
+
+                                    $dayDate = new DateTime($nextDay);
+                                    echo '<div class="small text-muted">';
+                                    echo '<strong>' . $dayDate->format('D, d.m.') . '</strong><br>';
+
+                                    foreach ($nextShows as $show) {
+                                        $showDateTime = new DateTime($show->showStart);
+                                        echo $showDateTime->format('H:i');
+                                        if ($show !== end($nextShows)) {
+                                            echo ' | ';
+                                        }
+                                    }
+                                    echo '</div>';
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -122,14 +212,59 @@ if (!empty($eventsOV)) $categoryCount++;
                 $detailRoute = Route::_('index.php?option=com_cinetixx&view=event&event_id=' . $id);
                 ?>
                 <div class="col-6 col-md-4 col-lg-3">
-                    <a href="<?= $detailRoute ?>" class="d-block" style="aspect-ratio: 2/3; overflow: hidden;">
-                        <?php if (!empty($event->poster)) : ?>
-                            <img src="<?= $event->poster ?>"
-                                 alt="<?= htmlspecialchars($event->title) ?>"
-                                 class="rounded"
-                                 style="width: 100%; height: 100%; object-fit: cover;">
-                        <?php endif; ?>
-                    </a>
+                    <div class="card">
+                        <a href="<?= $detailRoute ?>" class="d-block" style="aspect-ratio: 2/3; overflow: hidden;">
+                            <?php if (!empty($event->poster)) : ?>
+                                <img src="<?= $event->poster ?>"
+                                     alt="<?= htmlspecialchars($event->title) ?>"
+                                     class="card-img-top"
+                                     style="width: 100%; height: 100%; object-fit: cover;">
+                            <?php endif; ?>
+                        </a>
+                        <div class="card-body p-2">
+                            <?php
+                            // Get next show dates (group by day, take first day with up to 2 shows)
+                            if (!empty($event->shows)) {
+                                $showsByDay = [];
+                                $now = time();
+
+                                // Group shows by day
+                                foreach ($event->shows as $show) {
+                                    $showTime = strtotime($show->showStart);
+                                    if ($showTime >= $now) {
+                                        $day = date('Y-m-d', $showTime);
+                                        if (!isset($showsByDay[$day])) {
+                                            $showsByDay[$day] = [];
+                                        }
+                                        $showsByDay[$day][] = $show;
+                                    }
+                                }
+
+                                // Sort days
+                                ksort($showsByDay);
+
+                                // Get first day and limit to 2 shows
+                                if (!empty($showsByDay)) {
+                                    $nextDay = array_key_first($showsByDay);
+                                    $nextShows = array_slice($showsByDay[$nextDay], 0, 2);
+
+                                    $dayDate = new DateTime($nextDay);
+                                    echo '<div class="small text-muted">';
+                                    echo '<strong>' . $dayDate->format('D, d.m.') . '</strong><br>';
+
+                                    foreach ($nextShows as $show) {
+                                        $showDateTime = new DateTime($show->showStart);
+                                        echo $showDateTime->format('H:i');
+                                        if ($show !== end($nextShows)) {
+                                            echo ' | ';
+                                        }
+                                    }
+                                    echo '</div>';
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -143,14 +278,59 @@ if (!empty($eventsOV)) $categoryCount++;
                 $detailRoute = Route::_('index.php?option=com_cinetixx&view=event&event_id=' . $id);
                 ?>
                 <div class="col-6 col-md-4 col-lg-3">
-                    <a href="<?= $detailRoute ?>" class="d-block" style="aspect-ratio: 2/3; overflow: hidden;">
-                        <?php if (!empty($event->poster)) : ?>
-                            <img src="<?= $event->poster ?>"
-                                 alt="<?= htmlspecialchars($event->title) ?>"
-                                 class="rounded"
-                                 style="width: 100%; height: 100%; object-fit: cover;">
-                        <?php endif; ?>
-                    </a>
+                    <div class="card">
+                        <a href="<?= $detailRoute ?>" class="d-block" style="aspect-ratio: 2/3; overflow: hidden;">
+                            <?php if (!empty($event->poster)) : ?>
+                                <img src="<?= $event->poster ?>"
+                                     alt="<?= htmlspecialchars($event->title) ?>"
+                                     class="card-img-top"
+                                     style="width: 100%; height: 100%; object-fit: cover;">
+                            <?php endif; ?>
+                        </a>
+                        <div class="card-body p-2">
+                            <?php
+                            // Get next show dates (group by day, take first day with up to 2 shows)
+                            if (!empty($event->shows)) {
+                                $showsByDay = [];
+                                $now = time();
+
+                                // Group shows by day
+                                foreach ($event->shows as $show) {
+                                    $showTime = strtotime($show->showStart);
+                                    if ($showTime >= $now) {
+                                        $day = date('Y-m-d', $showTime);
+                                        if (!isset($showsByDay[$day])) {
+                                            $showsByDay[$day] = [];
+                                        }
+                                        $showsByDay[$day][] = $show;
+                                    }
+                                }
+
+                                // Sort days
+                                ksort($showsByDay);
+
+                                // Get first day and limit to 2 shows
+                                if (!empty($showsByDay)) {
+                                    $nextDay = array_key_first($showsByDay);
+                                    $nextShows = array_slice($showsByDay[$nextDay], 0, 2);
+
+                                    $dayDate = new DateTime($nextDay);
+                                    echo '<div class="small text-muted">';
+                                    echo '<strong>' . $dayDate->format('D, d.m.') . '</strong><br>';
+
+                                    foreach ($nextShows as $show) {
+                                        $showDateTime = new DateTime($show->showStart);
+                                        echo $showDateTime->format('H:i');
+                                        if ($show !== end($nextShows)) {
+                                            echo ' | ';
+                                        }
+                                    }
+                                    echo '</div>';
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>
