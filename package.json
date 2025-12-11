@@ -1,7 +1,7 @@
 {
   "name": "mod_cinetixx_events",
   "license": "MIT",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Joomla Module zur Anzeige von Cinetixx Veranstaltungen",
   "repository": {
     "type": "git",
@@ -10,11 +10,11 @@
   "scripts": {
     "build": "node build.js",
     "package": "npm run build",
-    "changelog": "changelogen --output CHANGELOG.md",
-    "release:patch": "changelogen --release --patch --push",
-    "release:minor": "changelogen --release --minor --push",
-    "release:major": "changelogen --release --major --push",
-    "release": "changelogen --release --push"
+    "changelog": "changelogen --output CHANGELOG.md --noAuthors",
+    "release:patch": "changelogen --release --patch --push --noAuthors",
+    "release:minor": "changelogen --release --minor --push --noAuthors",
+    "release:major": "changelogen --release --major --push --noAuthors",
+    "release": "changelogen --release --push --noAuthors"
   },
   "devDependencies": {
     "changelogen": "^0.6.2"

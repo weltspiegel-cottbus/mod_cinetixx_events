@@ -1,6 +1,14 @@
 # Changelog
 
 
+## v0.1.2
+
+[compare changes](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/compare/v0.1.1...v0.1.2)
+
+### 🚀 Enhancements
+
+- Display events as clickable poster grid ([fb04c47](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/commit/fb04c47))
+
 ## v0.1.1
 
 [compare changes](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/compare/v0.1.0...v0.1.1)
