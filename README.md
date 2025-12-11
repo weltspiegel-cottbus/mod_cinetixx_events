@@ -97,11 +97,16 @@ Install dependencies first:
 pnpm install
 ```
 
-**Before releasing**, update the version in `update-manifest.xml`:
-1. Open `update-manifest.xml`
-2. Update the `<version>` tag to match the new version
-3. Update the download URL to match the new version tag and filename
-4. Commit these changes
+**Before releasing**, update version numbers in two files:
+
+1. **`mod_cinetixx_events.xml`**:
+   - Update the `<version>` tag to match the new version
+
+2. **`update-manifest.xml`**:
+   - Update the `<version>` tag to match the new version
+   - Update the download URL to match the new version tag and filename
+
+3. Commit these changes
 
 Then create a release:
 
