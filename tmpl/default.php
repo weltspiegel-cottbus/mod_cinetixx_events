@@ -44,9 +44,16 @@ foreach ($events as $id => $event) {
     }
 }
 
+// Count how many categories have events
+$categoryCount = 0;
+if (!empty($events3D)) $categoryCount++;
+if (!empty($events2D)) $categoryCount++;
+if (!empty($eventsOmU)) $categoryCount++;
+if (!empty($eventsOV)) $categoryCount++;
+
 ?>
 <div class="mod-cinetixx-events">
-    <?php if (!empty($events3D) || !empty($events2D) || !empty($eventsOmU) || !empty($eventsOV)) : ?>
+    <?php if ($categoryCount > 1) : ?>
         <nav class="mb-3">
             <div class="d-flex gap-3 flex-wrap">
                 <?php if (!empty($events3D)) : ?>
