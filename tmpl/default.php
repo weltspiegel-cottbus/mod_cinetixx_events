@@ -122,7 +122,12 @@ if (!empty($eventsOV)) $categoryCount++;
 
                                     foreach ($nextShows as $show) {
                                         $showDateTime = new DateTime($show->showStart);
+                                        $bookingUrl = 'https://www.kinoheld.de/kino-cottbus/filmtheater-weltspiegel/vorstellung/' . $show->showId . '?mode=widget#panel-seats';
+
+                                        echo '<a href="' . htmlspecialchars($bookingUrl) . '" target="_blank" rel="noopener noreferrer" class="text-decoration-none">';
                                         echo $showDateTime->format('H:i');
+                                        echo '</a>';
+
                                         if ($show !== end($nextShows)) {
                                             echo ' | ';
                                         }
@@ -188,7 +193,12 @@ if (!empty($eventsOV)) $categoryCount++;
 
                                     foreach ($nextShows as $show) {
                                         $showDateTime = new DateTime($show->showStart);
+                                        $bookingUrl = 'https://www.kinoheld.de/kino-cottbus/filmtheater-weltspiegel/vorstellung/' . $show->showId . '?mode=widget#panel-seats';
+
+                                        echo '<a href="' . htmlspecialchars($bookingUrl) . '" target="_blank" rel="noopener noreferrer" class="text-decoration-none">';
                                         echo $showDateTime->format('H:i');
+                                        echo '</a>';
+
                                         if ($show !== end($nextShows)) {
                                             echo ' | ';
                                         }
@@ -254,7 +264,12 @@ if (!empty($eventsOV)) $categoryCount++;
 
                                     foreach ($nextShows as $show) {
                                         $showDateTime = new DateTime($show->showStart);
+                                        $bookingUrl = 'https://www.kinoheld.de/kino-cottbus/filmtheater-weltspiegel/vorstellung/' . $show->showId . '?mode=widget#panel-seats';
+
+                                        echo '<a href="' . htmlspecialchars($bookingUrl) . '" target="_blank" rel="noopener noreferrer" class="text-decoration-none">';
                                         echo $showDateTime->format('H:i');
+                                        echo '</a>';
+
                                         if ($show !== end($nextShows)) {
                                             echo ' | ';
                                         }
@@ -320,7 +335,12 @@ if (!empty($eventsOV)) $categoryCount++;
 
                                     foreach ($nextShows as $show) {
                                         $showDateTime = new DateTime($show->showStart);
+                                        $bookingUrl = 'https://www.kinoheld.de/kino-cottbus/filmtheater-weltspiegel/vorstellung/' . $show->showId . '?mode=widget#panel-seats';
+
+                                        echo '<a href="' . htmlspecialchars($bookingUrl) . '" target="_blank" rel="noopener noreferrer" class="text-decoration-none">';
                                         echo $showDateTime->format('H:i');
+                                        echo '</a>';
+
                                         if ($show !== end($nextShows)) {
                                             echo ' | ';
                                         }
