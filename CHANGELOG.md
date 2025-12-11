@@ -1,6 +1,20 @@
 # Changelog
 
 
+## v0.2.0
+
+[compare changes](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/compare/v0.1.2...v0.2.0)
+
+### 🚀 Enhancements
+
+- Separate 3D and 2D events with headings ([71c77b7](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/commit/71c77b7))
+- Add OmU category and use language property for categorization ([cc1ee42](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/commit/cc1ee42))
+- Add navigation header with category jump links ([8e870f3](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/commit/8e870f3))
+
+### 🩹 Fixes
+
+- Align poster images with consistent aspect ratio ([c9bdaa7](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/commit/c9bdaa7))
+
 ## v0.1.2
 
 [compare changes](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/compare/v0.1.1...v0.1.2)
