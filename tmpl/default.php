@@ -54,11 +54,12 @@ foreach ($events as $id => $event) {
                 $detailRoute = Route::_('index.php?option=com_cinetixx&view=event&event_id=' . $id);
                 ?>
                 <div class="col-6 col-md-4 col-lg-3">
-                    <a href="<?= $detailRoute ?>" class="d-block">
+                    <a href="<?= $detailRoute ?>" class="d-block" style="aspect-ratio: 2/3; overflow: hidden;">
                         <?php if (!empty($event->poster)) : ?>
                             <img src="<?= $event->poster ?>"
                                  alt="<?= htmlspecialchars($event->title) ?>"
-                                 class="img-fluid rounded">
+                                 class="rounded"
+                                 style="width: 100%; height: 100%; object-fit: cover;">
                         <?php endif; ?>
                     </a>
                 </div>
@@ -74,11 +75,12 @@ foreach ($events as $id => $event) {
                 $detailRoute = Route::_('index.php?option=com_cinetixx&view=event&event_id=' . $id);
                 ?>
                 <div class="col-6 col-md-4 col-lg-3">
-                    <a href="<?= $detailRoute ?>" class="d-block">
+                    <a href="<?= $detailRoute ?>" class="d-block" style="aspect-ratio: 2/3; overflow: hidden;">
                         <?php if (!empty($event->poster)) : ?>
                             <img src="<?= $event->poster ?>"
                                  alt="<?= htmlspecialchars($event->title) ?>"
-                                 class="img-fluid rounded">
+                                 class="rounded"
+                                 style="width: 100%; height: 100%; object-fit: cover;">
                         <?php endif; ?>
                     </a>
                 </div>
@@ -94,11 +96,12 @@ foreach ($events as $id => $event) {
                 $detailRoute = Route::_('index.php?option=com_cinetixx&view=event&event_id=' . $id);
                 ?>
                 <div class="col-6 col-md-4 col-lg-3">
-                    <a href="<?= $detailRoute ?>" class="d-block">
+                    <a href="<?= $detailRoute ?>" class="d-block" style="aspect-ratio: 2/3; overflow: hidden;">
                         <?php if (!empty($event->poster)) : ?>
                             <img src="<?= $event->poster ?>"
                                  alt="<?= htmlspecialchars($event->title) ?>"
-                                 class="img-fluid rounded">
+                                 class="rounded"
+                                 style="width: 100%; height: 100%; object-fit: cover;">
                         <?php endif; ?>
                     </a>
                 </div>
@@ -114,11 +117,12 @@ foreach ($events as $id => $event) {
                 $detailRoute = Route::_('index.php?option=com_cinetixx&view=event&event_id=' . $id);
                 ?>
                 <div class="col-6 col-md-4 col-lg-3">
-                    <a href="<?= $detailRoute ?>" class="d-block">
+                    <a href="<?= $detailRoute ?>" class="d-block" style="aspect-ratio: 2/3; overflow: hidden;">
                         <?php if (!empty($event->poster)) : ?>
                             <img src="<?= $event->poster ?>"
                                  alt="<?= htmlspecialchars($event->title) ?>"
-                                 class="img-fluid rounded">
+                                 class="rounded"
+                                 style="width: 100%; height: 100%; object-fit: cover;">
                         <?php endif; ?>
                     </a>
                 </div>
