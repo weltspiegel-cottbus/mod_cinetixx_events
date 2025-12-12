@@ -129,7 +129,9 @@ This will:
 2. Bump version in `package.json`
 3. Create a git commit with the changes
 4. Create a git tag (e.g., `v0.2.0`)
-5. Push to GitHub (which triggers the CI workflow)
+5. Push to GitHub
+6. Create a GitHub release with changelog
+7. Trigger GitHub Actions to build and attach the ZIP file
 
 #### Manual Changelog Generation
 
@@ -159,34 +161,22 @@ Excluded from package:
 
 ### GitHub Actions
 
-The module includes a GitHub Actions workflow (`.github/workflows/release.yml`) that automatically builds and publishes releases.
+The module includes a GitHub Actions workflow (`.github/workflows/release.yml`) that automatically builds and attaches the ZIP file to releases.
 
-#### Automated Workflow (Recommended)
+#### How It Works
 
-Use changelogen to create releases (as described above):
+When you run `pnpm release:minor` (or patch/major):
+1. **Changelogen** creates the GitHub release with changelog
+2. **GitHub Actions** triggers automatically on release creation
+3. **Workflow** builds the ZIP and attaches it to the release
 
-```bash
-pnpm release:minor
-```
+The workflow:
+1. Checks out the code
+2. Installs dependencies with pnpm
+3. Builds the installable ZIP package
+4. Uploads the ZIP to the release created by changelogen
 
-This automatically creates the tag and pushes to GitHub, triggering the workflow.
-
-#### Manual Workflow
-
-Alternatively, create and push a tag manually:
-
-```bash
-git tag v0.2.0
-git push origin v0.2.0
-```
-
-The workflow will:
-1. Checkout the code with full git history
-2. Install dependencies
-3. Build the package
-4. Create a GitHub release with:
-   - The installable ZIP file
-   - Changelog content (if CHANGELOG.md exists)
+No manual intervention needed - just run the release command!
 
 ## License
 
