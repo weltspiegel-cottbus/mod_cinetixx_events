@@ -9,6 +9,8 @@
 
 \defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
+use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Router\Route;
 
 /**
@@ -21,6 +23,10 @@ use Joomla\CMS\Router\Route;
 if (empty($events) || !is_array($events)) {
     return;
 }
+
+// Load booking JavaScript for modal handling
+$wa = Factory::getApplication()->getDocument()->getWebAssetManager();
+$wa->useScript('com_cinetixx.booking');
 
 /**
  * Helper function to render show times for an event
@@ -86,11 +92,12 @@ function renderShowTimes($event, $detailRoute): void
 
     foreach ($nextShows as $show) {
         $showDateTime = new DateTime($show->showStart);
-        $bookingUrl = 'https://www.kinoheld.de/kino-cottbus/filmtheater-weltspiegel/vorstellung/' . $show->showId . '?mode=widget#panel-seats';
 
-        echo '<a href="' . htmlspecialchars($bookingUrl) . '" target="_blank" rel="noopener noreferrer" class="text-decoration-none">';
-        echo $showDateTime->format('H:i');
-        echo '</a>';
+        echo LayoutHelper::render('booking.link', [
+            'showId' => $show->showId,
+            'label' => $showDateTime->format('H:i'),
+            'options' => ['class' => 'text-decoration-none']
+        ], JPATH_SITE . '/components/com_cinetixx/layouts');
 
         if ($show !== end($nextShows)) {
             echo ' | ';
@@ -110,6 +117,7 @@ function renderShowTimes($event, $detailRoute): void
 /**
  * Helper function to render an event card
  *
+ * @throws Exception
  * @since 1.0.0
  */
 function renderEventCard($id, $event): void
