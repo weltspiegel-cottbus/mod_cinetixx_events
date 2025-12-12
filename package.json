@@ -1,7 +1,7 @@
 {
   "name": "mod_cinetixx_events",
   "license": "MIT",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Joomla Module zur Anzeige von Cinetixx Veranstaltungen",
   "repository": {
     "type": "git",

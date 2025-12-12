@@ -1,6 +1,14 @@
 # Changelog
 
 
+## v0.2.3
+
+[compare changes](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/compare/v0.2.2...v0.2.3)
+
+### 🏡 Chore
+
+- Fix version number. ([39e780b](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/commit/39e780b))
+
 ## v0.2.2
 
 [compare changes](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/compare/v0.2.1...v0.2.2)
