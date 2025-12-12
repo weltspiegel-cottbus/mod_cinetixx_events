@@ -24,10 +24,14 @@ if (empty($events) || !is_array($events)) {
 
 /**
  * Helper function to render show times for an event
+ *
+ * @throws Exception
+ * @since 1.0.0
  */
-function renderShowTimes($event): void
+function renderShowTimes($event, $detailRoute): void
 {
     if (empty($event->shows)) {
+        echo '<div class="small text-muted" style="min-height: 3rem;">&nbsp;</div>';
         return;
     }
 
@@ -49,23 +53,36 @@ function renderShowTimes($event): void
     // Sort days
     ksort($showsByDay);
 
-    // Get first day and limit to 2 shows
+    // Get first day with all shows
     if (empty($showsByDay)) {
+        echo '<div class="small text-muted" style="min-height: 3rem;">&nbsp;</div>';
         return;
     }
 
     $nextDay = array_key_first($showsByDay);
-    $nextShows = array_slice($showsByDay[$nextDay], 0, 2);
+    $nextShows = $showsByDay[$nextDay];
+    $hasMoreDays = count($showsByDay) > 1;
 
     $dayDate = new DateTime($nextDay);
+    $today = new DateTime();
+    $tomorrow = (new DateTime())->modify('+1 day');
 
     // Format date in German
     $formatter = new IntlDateFormatter('de_DE', IntlDateFormatter::NONE, IntlDateFormatter::NONE);
     $formatter->setPattern('EEE, dd.MM.');
     $formattedDate = $formatter->format($dayDate);
 
-    echo '<div class="small text-muted">';
-    echo '<strong>' . $formattedDate . '</strong><br>';
+    // Check if it's today or tomorrow
+    $dayLabel = $formattedDate;
+    if ($dayDate->format('Y-m-d') === $today->format('Y-m-d')) {
+        $dayLabel = 'Heute (' . $formattedDate . ')';
+    } elseif ($dayDate->format('Y-m-d') === $tomorrow->format('Y-m-d')) {
+        $dayLabel = 'Morgen (' . $formattedDate . ')';
+    }
+
+    echo '<div class="small text-muted" style="min-height: 3rem;">';
+    echo '<div>';
+    echo '<strong>' . $dayLabel . '</strong><br>';
 
     foreach ($nextShows as $show) {
         $showDateTime = new DateTime($show->showStart);
@@ -80,17 +97,27 @@ function renderShowTimes($event): void
         }
     }
     echo '</div>';
+
+    if ($hasMoreDays) {
+        echo '<div class="mt-1">';
+        echo '<a href="' . $detailRoute . '" class="text-decoration-none">Weitere Tage</a>';
+        echo '</div>';
+    }
+
+    echo '</div>';
 }
 
 /**
  * Helper function to render an event card
+ *
+ * @since 1.0.0
  */
 function renderEventCard($id, $event): void
 {
     $detailRoute = Route::_('index.php?option=com_cinetixx&view=event&event_id=' . $id);
     ?>
     <div class="col-6 col-md-4 col-lg-3">
-        <div class="card">
+        <div class="card h-100">
             <a href="<?= $detailRoute ?>" class="d-block" style="aspect-ratio: 2/3; overflow: hidden;">
                 <?php if (!empty($event->poster)) : ?>
                     <img src="<?= $event->poster ?>"
@@ -100,7 +127,7 @@ function renderEventCard($id, $event): void
                 <?php endif; ?>
             </a>
             <div class="card-body p-2">
-                <?php renderShowTimes($event); ?>
+                <?php renderShowTimes($event, $detailRoute); ?>
             </div>
         </div>
     </div>
