@@ -1,6 +1,14 @@
 # Changelog
 
 
+## v0.2.4
+
+[compare changes](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/compare/v0.2.3...v0.2.4)
+
+### 🚀 Enhancements
+
+- Show all dates for the next show day. And stress today and tomorrow dates. ([ee92213](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/commit/ee92213))
+
 ## v0.2.3
 
 [compare changes](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/compare/v0.2.2...v0.2.3)
