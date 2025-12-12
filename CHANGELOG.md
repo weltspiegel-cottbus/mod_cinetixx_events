@@ -1,6 +1,15 @@
 # Changelog
 
 
+## v0.3.0
+
+[compare changes](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/compare/v0.2.4...v0.3.0)
+
+### 💅 Refactors
+
+- Trigger workflow on release creation instead of tag push ([62b86f5](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/commit/62b86f5))
+- Use layout helper for creating booking links. ([d4b00aa](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/commit/d4b00aa))
+
 ## v0.2.4
 
 [compare changes](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/compare/v0.2.3...v0.2.4)
@@ -16,10 +25,6 @@
 ### 🏡 Chore
 
 - Fix version number. ([39e780b](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/commit/39e780b))
-
-## v0.2.2
-
-[compare changes](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/compare/v0.2.1...v0.2.2)
 
 ## v0.2.1
 
@@ -67,18 +72,8 @@
 - Update to latest pnpm usage. ([7cb1735](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/commit/7cb1735))
 - Update workflow for automated updates. ([0c5c75c](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/commit/0c5c75c))
 
-### ❤️ Contributors
-
-- Micha Buchholz <mail@lean-stack.rocks>
-
 ## v0.1.0
-
 
 ### 🏡 Chore
 
 - Create initial cinetixx events module. Initial commit. ([ee0ccbf](https://github.com/weltspiegel-cottbus/mod_cinetixx_events/commit/ee0ccbf))
-
-### ❤️ Contributors
-
-- Micha Buchholz <mail@lean-stack.rocks>
-
