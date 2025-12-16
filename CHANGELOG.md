@@ -1,6 +1,14 @@
 # Changelog
 
 
+## v0.4.1
+
+[compare changes](https://github.com/weltspiegel-cottbus/mod_current_events/compare/v0.4.0...v0.4.1)
+
+### 🏡 Chore
+
+- Update build process. ([a23e829](https://github.com/weltspiegel-cottbus/mod_current_events/commit/a23e829))
+
 ## v0.4.0
 
 [compare changes](https://github.com/weltspiegel-cottbus/mod_current_events/compare/v0.3.0...v0.4.0)
