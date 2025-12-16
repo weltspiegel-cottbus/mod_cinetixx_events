@@ -1,11 +1,11 @@
 {
-  "name": "mod_cinetixx_events",
+  "name": "mod_current_events",
   "license": "MIT",
   "version": "0.3.0",
-  "description": "Joomla Module zur Anzeige von Cinetixx Veranstaltungen",
+  "description": "Joomla Module zur Anzeige aktueller Veranstaltungen",
   "repository": {
     "type": "git",
-    "url": "https://github.com/weltspiegel-cottbus/mod_cinetixx_events.git"
+    "url": "https://github.com/weltspiegel-cottbus/mod_current_events.git"
   },
   "scripts": {
     "build": "node build.js",

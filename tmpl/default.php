@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package     Weltspiegel\Module\CinetixxEvents
+ * @package     Weltspiegel\Module\CurrentEvents
  *
  * @copyright   Weltspiegel Cottbus
  * @license     MIT; see LICENSE file
@@ -91,7 +91,7 @@ function renderShowTimes($event, $detailRoute): void
             'showId' => $show->showId,
             'label' => $showDateTime->format('H:i'),
             'options' => ['class' => 'text-decoration-none']
-        ], JPATH_SITE . '/components/com_cinetixx/layouts');
+        ], JPATH_SITE . '/components/com_weltspiegel/layouts');
 
         if ($show !== end($nextShows)) {
             echo ' | ';
@@ -116,7 +116,7 @@ function renderShowTimes($event, $detailRoute): void
  */
 function renderEventCard($id, $event): void
 {
-    $detailRoute = Route::_('index.php?option=com_cinetixx&view=event&event_id=' . $id);
+    $detailRoute = Route::_('index.php?option=com_weltspiegel&view=event&event_id=' . $id);
     ?>
     <div class="col-6 col-md-4 col-lg-3">
         <div class="card h-100">

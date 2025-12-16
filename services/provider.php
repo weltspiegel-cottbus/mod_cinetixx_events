@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package     Weltspiegel\Module\CinetixxEvents
+ * @package     Weltspiegel\Module\CurrentEvents
  *
  * @copyright   Weltspiegel Cottbus
  * @license     MIT; see LICENSE file
@@ -15,7 +15,7 @@ use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
 
 /**
- * The Cinetixx Events module service provider.
+ * The Current Events module service provider.
  *
  * @since 0.1.0
  */
@@ -31,7 +31,7 @@ return new class () implements ServiceProviderInterface {
      */
     public function register(Container $container): void
     {
-        $container->registerServiceProvider(new ModuleDispatcherFactory('\\Weltspiegel\\Module\\CinetixxEvents'));
+        $container->registerServiceProvider(new ModuleDispatcherFactory('\\Weltspiegel\\Module\\CurrentEvents'));
         $container->registerServiceProvider(new Module());
     }
 };

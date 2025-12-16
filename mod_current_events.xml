@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="module" client="site" method="upgrade">
-    <name>MOD_CINETIXX_EVENTS</name>
+    <name>MOD_CURRENT_EVENTS</name>
     <version>0.3.0</version>
     <creationDate>Dezember 2025</creationDate>
     <author>Michael Buchholz</author>
     <authorEmail>mail@lean-stack.rocks</authorEmail>
     <copyright>Weltspiegel Cottbus</copyright>
     <license>MIT; see LICENSE</license>
-    <description>MOD_CINETIXX_EVENTS_XML_DESCRIPTION</description>
+    <description>MOD_CURRENT_EVENTS_XML_DESCRIPTION</description>
 
-    <namespace path="src">Weltspiegel\Module\CinetixxEvents</namespace>
+    <namespace path="src">Weltspiegel\Module\CurrentEvents</namespace>
 
     <files>
-        <folder module="mod_cinetixx_events">services</folder>
+        <folder module="mod_current_events">services</folder>
         <folder>src</folder>
         <folder>tmpl</folder>
         <folder>language</folder>
     </files>
 
     <updateservers>
-        <server type="extension" priority="1" name="Cinetixx Events Module Updates">https://raw.githubusercontent.com/weltspiegel-cottbus/mod_cinetixx_events/main/update-manifest.xml</server>
+        <server type="extension" priority="1" name="Current Events Module Updates">https://raw.githubusercontent.com/weltspiegel-cottbus/mod_current_events/main/update-manifest.xml</server>
     </updateservers>
 </extension>

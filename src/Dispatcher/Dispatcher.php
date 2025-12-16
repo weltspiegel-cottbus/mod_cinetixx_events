@@ -1,39 +1,41 @@
 <?php
 
 /**
- * @package     Weltspiegel\Module\CinetixxEvents
+ * @package     Weltspiegel\Module\CurrentEvents
  *
  * @copyright   Weltspiegel Cottbus
  * @license     MIT; see LICENSE file
  */
 
-namespace Weltspiegel\Module\CinetixxEvents\Site\Dispatcher;
+namespace Weltspiegel\Module\CurrentEvents\Site\Dispatcher;
 
 \defined('_JEXEC') or die;
 
+use Exception;
 use Joomla\CMS\Dispatcher\AbstractModuleDispatcher;
-use Weltspiegel\Module\CinetixxEvents\Site\Helper\CinetixxEventsHelper;
+use Weltspiegel\Module\CurrentEvents\Site\Helper\CurrentEventsHelper;
 
 /**
- * Dispatcher class for mod_cinetixx_events
+ * Dispatcher class for mod_current_events
  *
  * @since 0.1.0
  */
 class Dispatcher extends AbstractModuleDispatcher
 {
-    /**
-     * Returns the layout data.
-     *
-     * @return array
-     *
-     * @since 0.1.0
-     */
+	/**
+	 * Returns the layout data.
+	 *
+	 * @return array
+	 *
+	 * @throws Exception
+	 * @since 0.1.0
+	 */
     protected function getLayoutData(): array
     {
         $data = parent::getLayoutData();
 
         // Get events from the component using our helper
-        $data['events'] = CinetixxEventsHelper::getEvents();
+        $data['events'] = CurrentEventsHelper::getEvents();
 
         return $data;
     }

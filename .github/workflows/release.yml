@@ -34,6 +34,6 @@ jobs:
       - name: Upload release asset
         uses: softprops/action-gh-release@v1
         with:
-          files: mod_cinetixx_events-*.zip
+          files: mod_current_events-*.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

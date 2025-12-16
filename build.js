@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Build script for mod_cinetixx_events
+ * Build script for mod_current_events
  * Creates a ZIP file ready for Joomla installation
  */
 
@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const moduleName = 'mod_cinetixx_events';
+const moduleName = 'mod_current_events';
 const version = require('./package.json').version;
 const outputFile = `${moduleName}-${version}.zip`;
 
