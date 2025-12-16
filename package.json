@@ -1,20 +1,21 @@
 {
   "name": "mod_current_events",
-  "license": "MIT",
   "version": "0.4.0",
   "description": "Joomla Module zur Anzeige aktueller Veranstaltungen",
+  "type": "module",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/weltspiegel-cottbus/mod_current_events.git"
   },
   "scripts": {
-    "build": "node build.js",
-    "package": "npm run build",
+    "build": "echo 'No assets to build for this module'",
+    "package": "node .build/package.mjs",
+    "release": "npm run build && npm run package",
     "changelog": "changelogen --output CHANGELOG.md --noAuthors",
     "release:patch": "changelogen --release --patch --push --noAuthors",
     "release:minor": "changelogen --release --minor --push --noAuthors",
-    "release:major": "changelogen --release --major --push --noAuthors",
-    "release": "changelogen --release --push --noAuthors"
+    "release:major": "changelogen --release --major --push --noAuthors"
   },
   "devDependencies": {
     "changelogen": "^0.6.2"
