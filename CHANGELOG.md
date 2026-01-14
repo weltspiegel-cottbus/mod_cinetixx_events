@@ -1,6 +1,14 @@
 # Changelog
 
 
+## v0.4.2
+
+[compare changes](https://github.com/weltspiegel-cottbus/mod_current_events/compare/v0.4.1...v0.4.2)
+
+### 🩹 Fixes
+
+- Updated to the new model name. ([bb47f46](https://github.com/weltspiegel-cottbus/mod_current_events/commit/bb47f46))
+
 ## v0.4.1
 
 [compare changes](https://github.com/weltspiegel-cottbus/mod_current_events/compare/v0.4.0...v0.4.1)
