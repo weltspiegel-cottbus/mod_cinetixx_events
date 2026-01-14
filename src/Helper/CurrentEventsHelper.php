@@ -37,8 +37,8 @@ class CurrentEventsHelper
         $component = $app->bootComponent('com_weltspiegel');
         $mvcFactory = $component->getMVCFactory();
 
-        // Create the Events model
-        $model = $mvcFactory->createModel('Events', 'Site');
+        // Create the Cinetixx model
+        $model = $mvcFactory->createModel('Cinetixx', 'Site');
 
         if (!$model) {
             return false;
