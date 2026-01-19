@@ -2,7 +2,7 @@
 <extension type="module" client="site" method="upgrade">
     <name>MOD_CURRENT_EVENTS</name>
     <version>0.4.3</version>
-    <creationDate>Dezember 2025</creationDate>
+    <creationDate>11.12.2025</creationDate>
     <author>Michael Buchholz</author>
     <authorEmail>mail@lean-stack.rocks</authorEmail>
     <copyright>Weltspiegel Cottbus</copyright>
